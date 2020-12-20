@@ -1,0 +1,28 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd">
+    <changeSet author="Win" id="1604254875082-1">
+        <createView  catalogName="ponude"
+
+                     schemaName="public"
+                     viewName="hvale_partije">
+                     SELECT procijenjena.id,
+                     procijenjena.partija,
+                     <!-- procijenjena.atc, -->
+                     procijenjena.naziv_proizvoda,
+                     procijenjena.farmaceutski_oblik,
+                     procijenjena.pakovanje,
+                     procijenjena.trazena_kolicina,
+                     procijenjena.procijenjena_jedinicna_cijena,
+                     procijenjena.procijenjena_ukupna_cijena,
+                     procijenjena.broj_tendera
+                    FROM procijenjena
+                   WHERE NOT (procijenjena.partija IN ( SELECT view_bodovanje.partija
+                            FROM view_bodovanje
+                           WHERE view_bodovanje.bod_ukupno = 100::numeric))
+        </createView>
+
+    </changeSet>
+</databaseChangeLog>

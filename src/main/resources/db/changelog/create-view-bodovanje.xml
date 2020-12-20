@@ -1,0 +1,34 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd">
+    <changeSet  author="liquibase-docs"  id="createView-example">
+        <createView  catalogName="ponude"
+
+                     schemaName="public"
+                     viewName="view_bodovanje">
+                     SELECT 
+                     bodovanje1.id, 
+                     bodovanje1.partija, 
+                     bodovanje1.atc, 
+                     bodovanje1.naziv_proizvoda, 
+                     bodovanje1.zasticeni_naziv, 
+                     bodovanje1.proizvodjac, 
+                     bodovanje1.farmaceutski_oblik, 
+                     bodovanje1.pakovanje, 
+                     bodovanje1.trazena_kolicina, 
+                     bodovanje1.ponudjana_kolicina, 
+                     bodovanje1.procijenjena_jedinicna_cijena, 
+                     bodovanje1.ponudjena_jedinicna_cijena, 
+                     bodovanje1.procijenjena_ukupna_cijena, 
+                     bodovanje1.ponudjena_ukupna_cijena, 
+                     bodovanje1.rok_isporuke, 
+                     bodovanje1.ponudjac, 
+                     bodovanje1.broj_tendera, 
+                     bodovanje1.bod_cijena, 
+                     bodovanje1.bod_rok, 
+                     (
+                       bodovanje1.bod_cijena + (bodovanje1.bod_rok)::numeric
+                     ) AS bod_ukupno 
+                   FROM bodovanje1;
+        </createView>
+    </changeSet>
+</databaseChangeLog>

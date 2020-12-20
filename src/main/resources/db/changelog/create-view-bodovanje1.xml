@@ -1,0 +1,33 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd">
+    <changeSet  author="liquibase-docs"  id="createView-bodovanje1">
+        <createView  catalogName="ponude"
+
+                     schemaName="public"
+                     viewName="bodovanje1">
+                     SELECT ponude.id,
+                     ponude.partija,
+                     ponude.atc,
+                     ponude.naziv_proizvoda,
+                     ponude.zasticeni_naziv,
+                     ponude.proizvodjac,
+                     ponude.farmaceutski_oblik,
+                     ponude.pakovanje,
+                     ponude.trazena_kolicina,
+                     ponude.ponudjana_kolicina,
+                     ponude.procijenjena_jedinicna_cijena,
+                     ponude.ponudjena_jedinicna_cijena,
+                     ponude.procijenjena_ukupna_cijena,
+                     ponude.ponudjena_ukupna_cijena,
+                     ponude.rok_isporuke,
+                     ponude.ponudjac,
+                     ponude.broj_tendera,
+                     (((90)::numeric *
+                     min(ponude.ponudjena_jedinicna_cijena) OVER (PARTITION BY ponude.partija,
+                     ponude.broj_tendera)) / ponude.ponudjena_jedinicna_cijena) AS bod_cijena,
+                     ((10 * min(ponude.rok_isporuke) OVER (PARTITION BY ponude.partija,
+                     ponude.broj_tendera)) / ponude.rok_isporuke) AS bod_rok
+                 FROM ponude;
+        </createView>
+    </changeSet>
+</databaseChangeLog>

@@ -1,0 +1,472 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.12.2.final using JasperReports Library version 6.12.2-75c5e90a222ab406e416cbf590a5397028a52de3  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Cherry_Landscape" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="7a5c9b49-9dc5-422a-ac69-e92cf61ef530">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="DataAdapter.xml"/>
+	<style name="Title" forecolor="#FFFFFF" fontName="Times New Roman" fontSize="50" isBold="false"/>
+	<style name="SubTitle" forecolor="#CCCCCC" fontName="Times New Roman" fontSize="18" isBold="false"/>
+	<style name="Column header" forecolor="#666666" fontName="Times New Roman" fontSize="14" isBold="true"/>
+	<style name="Detail" mode="Transparent" fontName="Times New Roman"/>
+	<style name="Row" mode="Transparent" fontName="Times New Roman" pdfFontName="Times-Roman">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$V{REPORT_COUNT}%2 == 0]]></conditionExpression>
+			<style mode="Opaque" backcolor="#F0EFEF"/>
+		</conditionalStyle>
+	</style>
+	<queryString language="SQL">
+		<![CDATA[select * from ponude]]>
+	</queryString>
+	<field name="id" class="java.lang.Long">
+		<property name="com.jaspersoft.studio.field.label" value="id"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="ponude"/>
+	</field>
+	<field name="partija" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="partija"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="ponude"/>
+	</field>
+	<field name="atc" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="atc"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="ponude"/>
+	</field>
+	<field name="naziv_proizvoda" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="naziv_proizvoda"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="ponude"/>
+	</field>
+	<field name="zasticeni_naziv" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="zasticeni_naziv"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="ponude"/>
+	</field>
+	<field name="proizvodjac" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="proizvodjac"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="ponude"/>
+	</field>
+	<field name="farmaceutski_oblik" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="farmaceutski_oblik"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="ponude"/>
+	</field>
+	<field name="pakovanje" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="pakovanje"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="ponude"/>
+	</field>
+	<field name="trazena_kolicina" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="trazena_kolicina"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="ponude"/>
+	</field>
+	<field name="ponudjana_kolicina" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="ponudjana_kolicina"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="ponude"/>
+	</field>
+	<field name="procijenjena_jedinicna_cijena" class="java.lang.Double">
+		<property name="com.jaspersoft.studio.field.label" value="procijenjena_jedinicna_cijena"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="ponude"/>
+	</field>
+	<field name="ponudjena_jedinicna_cijena" class="java.lang.Double">
+		<property name="com.jaspersoft.studio.field.label" value="ponudjena_jedinicna_cijena"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="ponude"/>
+	</field>
+	<field name="procijenjena_ukupna_cijena" class="java.lang.Double">
+		<property name="com.jaspersoft.studio.field.label" value="procijenjena_ukupna_cijena"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="ponude"/>
+	</field>
+	<field name="ponudjena_ukupna_cijena" class="java.lang.Double">
+		<property name="com.jaspersoft.studio.field.label" value="ponudjena_ukupna_cijena"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="ponude"/>
+	</field>
+	<field name="rok_isporuke" class="java.lang.Integer">
+		<property name="com.jaspersoft.studio.field.label" value="rok_isporuke"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="ponude"/>
+	</field>
+	<field name="ponudjac" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="ponudjac"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="ponude"/>
+	</field>
+	<field name="broj_tendera" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="broj_tendera"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="ponude"/>
+	</field>
+	<field name="selected" class="java.lang.Boolean">
+		<property name="com.jaspersoft.studio.field.label" value="selected"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="ponude"/>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="102" splitType="Stretch">
+			<image>
+				<reportElement x="725" y="0" width="77" height="102" uuid="651ccc4b-e999-40fe-bcbf-1f25bcfc98af"/>
+			</image>
+			<frame>
+				<reportElement mode="Opaque" x="0" y="-20" width="797" height="66" backcolor="#000000" uuid="d8d9e644-3a32-491d-97cb-a277aff17133"/>
+				<staticText>
+					<reportElement style="Title" x="0" y="0" width="370" height="66" uuid="27d8f6ee-f0a9-44f6-a160-1763c3b00f30"/>
+					<box topPadding="4" leftPadding="4" bottomPadding="4" rightPadding="4"/>
+					<textElement verticalAlignment="Bottom">
+						<font isBold="false"/>
+					</textElement>
+					<text><![CDATA[Ponude]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="SubTitle" x="370" y="37" width="316" height="29" uuid="cfa21334-0634-4605-9ea7-aca4981f67e4"/>
+					<textElement textAlignment="Right">
+						<font size="22" isBold="false"/>
+					</textElement>
+					<text><![CDATA[Cherry SubTitle]]></text>
+				</staticText>
+			</frame>
+			<frame>
+				<reportElement mode="Opaque" x="0" y="70" width="797" height="32" forecolor="#000000" backcolor="#CC0000" uuid="b0c895f6-6dbd-477d-9858-9ad66af087e1"/>
+				<textField pattern="EEEEE dd MMMMM yyyy">
+					<reportElement x="553" y="12" width="144" height="20" forecolor="#FFFFFF" uuid="a33fce3b-20c1-4696-873a-fe134d1e7d88"/>
+					<textElement textAlignment="Right">
+						<font size="12"/>
+					</textElement>
+					<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="18" splitType="Stretch">
+			<staticText>
+				<reportElement style="Column header" x="44" y="0" width="44" height="18" forecolor="#000000" uuid="6ed9a877-98b8-4ff4-885b-c86354c69c44">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="088260da-fab0-480b-b326-091a82944816"/>
+				</reportElement>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[partija]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="88" y="0" width="44" height="18" forecolor="#000000" uuid="6bbe3c40-433d-470b-98d2-87c077b92051">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="7ff52947-bdce-4584-8e76-d2940162a48f"/>
+				</reportElement>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[atc]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="132" y="0" width="44" height="18" forecolor="#000000" uuid="86279d70-33ae-4929-bef3-57802e399067">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="030e06be-8d50-4bc6-b5e3-ba1db3882bdd"/>
+				</reportElement>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[naziv_proizvoda]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="176" y="0" width="44" height="18" forecolor="#000000" uuid="6ce3c35c-9fca-4c5a-baf6-36a514359398">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="ed6bbcb4-e907-4e2f-806d-825cfb2abe10"/>
+				</reportElement>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[zasticeni_naziv]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="220" y="0" width="44" height="18" forecolor="#000000" uuid="79c9bbf5-036b-486d-8d40-e5298d498e4c">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="2ddb8814-bf24-4c10-870d-94a0dd050f42"/>
+				</reportElement>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[proizvodjac]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="264" y="0" width="44" height="18" forecolor="#000000" uuid="5e72a7e6-f911-4e08-8863-c52965a84729">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="264b4d7d-4781-4f40-8568-2a7e404e50a4"/>
+				</reportElement>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[farmaceutski_oblik]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="308" y="0" width="44" height="18" forecolor="#000000" uuid="024106bc-4407-4ceb-bc03-9588dfe43025">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="48ef98ff-18f6-4954-849e-f12fbce156a8"/>
+				</reportElement>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[pakovanje]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="352" y="0" width="44" height="18" forecolor="#000000" uuid="04475926-8eb4-4bf6-912c-9469785ef756">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="db89c2bd-9538-4b29-8b60-04bbbe443d01"/>
+				</reportElement>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[trazena_kolicina]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="396" y="0" width="44" height="18" forecolor="#000000" uuid="14ca78e9-1470-43ef-9520-d65075eceac9">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="737d0af2-954c-4dd3-be46-2f224d0aa3a3"/>
+				</reportElement>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[ponudjana_kolicina]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="440" y="0" width="44" height="18" forecolor="#000000" uuid="4cc9b676-5b3c-487a-867c-fdaeb3632bda">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="609035f6-1db7-4244-a265-3cf885fd0937"/>
+				</reportElement>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[procijenjena_jedinicna_cijena]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="484" y="0" width="44" height="18" forecolor="#000000" uuid="6ed18da4-097b-4198-944b-ce70d20a8006">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="65f177f6-6932-4b26-a6ec-464193ae6a13"/>
+				</reportElement>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[ponudjena_jedinicna_cijena]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="528" y="0" width="44" height="18" forecolor="#000000" uuid="ba27e488-873f-45bf-a5de-a77a4b33aa79">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="b0591127-8548-4677-aaaa-ca9f0cea7e4a"/>
+				</reportElement>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[procijenjena_ukupna_cijena]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="572" y="0" width="44" height="18" forecolor="#000000" uuid="248a064b-db03-4d12-8aac-bb591d52d70d">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="bb36b3b4-3e71-4285-9830-3285a2f18839"/>
+				</reportElement>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[ponudjena_ukupna_cijena]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="616" y="0" width="44" height="18" forecolor="#000000" uuid="2fc82904-7780-4aa7-90a8-197b61f90248">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="dedf0db1-ba37-4e41-a013-6fb1912aa6dd"/>
+				</reportElement>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[rok_isporuke]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="660" y="0" width="44" height="18" forecolor="#000000" uuid="575374de-9589-4db8-ac2a-c1393b1d1aa0">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="d9a41ba1-4247-4fd9-bc18-1413f77798d4"/>
+				</reportElement>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[ponudjac]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="704" y="0" width="44" height="18" forecolor="#000000" uuid="6d7e7aa8-2352-416f-b946-989cc72c453e">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="5e20950e-d1cd-4ef8-96e6-15a21d66d751"/>
+				</reportElement>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[broj_tendera]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="18" splitType="Stretch">
+			<frame>
+				<reportElement style="Row" mode="Opaque" x="0" y="0" width="797" height="18" uuid="34a2ae4b-4055-476b-8676-d499f6af510b"/>
+				<textField>
+					<reportElement style="Detail" positionType="Float" x="44" y="0" width="44" height="18" uuid="b3c92ef6-2835-4b78-934d-acc25d8cfbec">
+						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="088260da-fab0-480b-b326-091a82944816"/>
+					</reportElement>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{partija}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="Detail" positionType="Float" x="88" y="0" width="44" height="18" uuid="76419836-cc2d-4cd8-ad76-57dd35776b6c">
+						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="7ff52947-bdce-4584-8e76-d2940162a48f"/>
+					</reportElement>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{atc}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="Detail" positionType="Float" x="132" y="0" width="44" height="18" uuid="aabb4c82-15e9-4402-8686-231f451e28bf">
+						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="030e06be-8d50-4bc6-b5e3-ba1db3882bdd"/>
+					</reportElement>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{naziv_proizvoda}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="Detail" positionType="Float" x="176" y="0" width="44" height="18" uuid="655095e7-32e4-4a98-913a-26dcf4573397">
+						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="ed6bbcb4-e907-4e2f-806d-825cfb2abe10"/>
+					</reportElement>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{zasticeni_naziv}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="Detail" positionType="Float" x="220" y="0" width="44" height="18" uuid="6aedbb19-2652-485d-86cb-67f816eed5b5">
+						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="2ddb8814-bf24-4c10-870d-94a0dd050f42"/>
+					</reportElement>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{proizvodjac}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="Detail" positionType="Float" x="264" y="0" width="44" height="18" uuid="bc0ebfb2-0904-4581-91c7-444d9babd305">
+						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="264b4d7d-4781-4f40-8568-2a7e404e50a4"/>
+					</reportElement>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{farmaceutski_oblik}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="Detail" positionType="Float" x="308" y="0" width="44" height="18" uuid="50461b8e-4f75-457f-806b-142e8b744461">
+						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="48ef98ff-18f6-4954-849e-f12fbce156a8"/>
+					</reportElement>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{pakovanje}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="Detail" positionType="Float" x="352" y="0" width="44" height="18" uuid="392064ee-d340-4e32-9f13-897647cb84d0">
+						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="db89c2bd-9538-4b29-8b60-04bbbe443d01"/>
+					</reportElement>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{trazena_kolicina}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="Detail" positionType="Float" x="396" y="0" width="44" height="18" uuid="e1a04677-e27c-44bf-b108-1c9dd9db1004">
+						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="737d0af2-954c-4dd3-be46-2f224d0aa3a3"/>
+					</reportElement>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{ponudjana_kolicina}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="Detail" positionType="Float" x="440" y="0" width="44" height="18" uuid="bcb7addc-21e0-4bf8-b5a5-c6e59e975463">
+						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="609035f6-1db7-4244-a265-3cf885fd0937"/>
+					</reportElement>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{procijenjena_jedinicna_cijena}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="Detail" positionType="Float" x="484" y="0" width="44" height="18" uuid="963cbdd5-4b13-4c69-9f38-7c946e1128ae">
+						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="65f177f6-6932-4b26-a6ec-464193ae6a13"/>
+					</reportElement>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{ponudjena_jedinicna_cijena}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="Detail" positionType="Float" x="528" y="0" width="44" height="18" uuid="50b109ae-e341-4f6f-b029-aed42c1ab1dc">
+						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="b0591127-8548-4677-aaaa-ca9f0cea7e4a"/>
+					</reportElement>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{procijenjena_ukupna_cijena}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="Detail" positionType="Float" x="572" y="0" width="44" height="18" uuid="7328adb0-544f-4599-9233-9c6e19a304d4">
+						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="bb36b3b4-3e71-4285-9830-3285a2f18839"/>
+					</reportElement>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{ponudjena_ukupna_cijena}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="Detail" positionType="Float" x="616" y="0" width="44" height="18" uuid="a501572f-646a-47f3-b362-a3b35c4be4ca">
+						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="dedf0db1-ba37-4e41-a013-6fb1912aa6dd"/>
+					</reportElement>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{rok_isporuke}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="Detail" positionType="Float" x="660" y="0" width="44" height="18" uuid="b3156baf-b370-48d0-848a-5c3630ab99d9">
+						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="d9a41ba1-4247-4fd9-bc18-1413f77798d4"/>
+					</reportElement>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{ponudjac}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="Detail" positionType="Float" x="704" y="0" width="44" height="18" uuid="555e9ec1-5942-4794-bff5-ea80ae527a48">
+						<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="5e20950e-d1cd-4ef8-96e6-15a21d66d751"/>
+					</reportElement>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{broj_tendera}]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="7" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="3" width="555" height="1" uuid="501ac6c4-e9d4-43cb-ba6b-7f2f44394cf3"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="25" splitType="Stretch">
+			<frame>
+				<reportElement mode="Opaque" x="0" y="0" width="802" height="25" forecolor="#D0B48E" backcolor="#000000" uuid="ffb10ec8-0371-4545-8eaa-96d62ad3cec0"/>
+				<textField evaluationTime="Report">
+					<reportElement style="Column header" x="757" y="3" width="40" height="20" forecolor="#FFFFFF" uuid="b5521ea6-5f36-4864-856f-58d0bcd011f2"/>
+					<textElement verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="Column header" x="677" y="3" width="80" height="20" forecolor="#FFFFFF" uuid="e625ea3c-1741-4cfe-81cf-fbbdd00162c8"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+				</textField>
+				<textField pattern="EEEEE dd MMMMM yyyy">
+					<reportElement style="Column header" x="2" y="3" width="197" height="20" forecolor="#FFFFFF" uuid="0c9f7e91-d3f5-47f9-82b7-0b2b3a43a5d6"/>
+					<textElement verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>
