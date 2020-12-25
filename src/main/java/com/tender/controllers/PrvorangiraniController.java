@@ -2,7 +2,8 @@ package com.tender.controllers;
 
 import java.util.List;
 
-import com.tender.models.viewPrvorangirani;
+import com.tender.models.Prvorangirani;
+
 import com.tender.service.PrvorangiraniService;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,10 +22,8 @@ public class PrvorangiraniController {
 	private PrvorangiraniService viewPrvorangiraniService;
 
 	@GetMapping("/ponude/tender/prvorangirani/{broj_tendera}")
-	public  List<viewPrvorangirani> findByBrojTenderaPrvorangirani(
-			@PathVariable Integer broj_tendera) {
-		List<viewPrvorangirani> prvorangirani = viewPrvorangiraniService
-				.findByTenderPrvorangirani(broj_tendera);
+	public List<Prvorangirani> findByBrojTenderaPrvorangirani(@PathVariable Integer broj_tendera) {
+		List<Prvorangirani> prvorangirani = viewPrvorangiraniService.findByTenderPrvorangirani(broj_tendera);
 		return prvorangirani;
 	}
 }

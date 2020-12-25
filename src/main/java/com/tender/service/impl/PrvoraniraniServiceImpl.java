@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.transaction.Transactional;
 
+import com.tender.models.Prvorangirani;
 import com.tender.repository.PrvorangiraniRepository;
 import com.tender.service.PrvorangiraniService;
 
@@ -18,7 +19,7 @@ public class PrvoraniraniServiceImpl implements PrvorangiraniService {
     PrvorangiraniRepository prvorangiraniRepository;
 
     @Override
-    public List<com.tender.models.viewPrvorangirani> findByTenderPrvorangirani(Integer broj_tendera) {
+    public List<Prvorangirani> findByTenderPrvorangirani(Integer broj_tendera) {
         return prvorangiraniRepository.findBrojTenderaPrvorangirani(broj_tendera);
     }
 
