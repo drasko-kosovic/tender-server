@@ -2,8 +2,8 @@ package com.tender.controllers;
 
 import java.util.List;
 
-import com.tender.models.Bodovanje;
-import com.tender.service.BodovanjeService;
+import com.tender.models.viewPrvorangirani;
+import com.tender.service.PrvorangiraniService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -15,16 +15,16 @@ import org.springframework.web.bind.annotation.RestController;
 @CrossOrigin(origins = "*", maxAge = 3600)
 @RestController
 @RequestMapping("/api")
-public class BodovanjeController {
+public class PrvorangiraniController {
 
 	@Autowired
-	private BodovanjeService bodovanjeService;
+	private PrvorangiraniService viewPrvorangiraniService;
 
-	@GetMapping("/ponude/bodovanje/{broj_tendera}")
-	public List<Bodovanje> findByBrojTenderaBodovanje(@PathVariable Integer broj_tendera) {
-		List<Bodovanje> bodovanje = bodovanjeService.findByTenderBodovanje(broj_tendera);
-		return bodovanje;
+	@GetMapping("/ponude/tender/prvorangirani/{broj_tendera}")
+	public  List<viewPrvorangirani> findByBrojTenderaPrvorangirani(
+			@PathVariable Integer broj_tendera) {
+		List<viewPrvorangirani> prvorangirani = viewPrvorangiraniService
+				.findByTenderPrvorangirani(broj_tendera);
+		return prvorangirani;
 	}
-
-	
 }

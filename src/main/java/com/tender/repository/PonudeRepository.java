@@ -12,7 +12,6 @@ import java.util.List;
 @Repository
 public interface PonudeRepository extends JpaRepository<Ponude, Integer> {
 
-        // List<Ponude> findByPonudjac(String ponudjac);
 
         @Query(value = " SELECT * FROM Ponude p WHERE p.broj_tendera=:broj_tendera", nativeQuery = true)
         List<Ponude> findByBroj_tendera(Integer broj_tendera);

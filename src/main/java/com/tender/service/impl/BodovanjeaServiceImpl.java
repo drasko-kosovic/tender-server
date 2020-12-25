@@ -24,9 +24,4 @@ public class BodovanjeaServiceImpl implements BodovanjeService {
         return bodovanjeRepository.findByTenderBodovanje(broj_tendera);
     }
 
-    @Override
-    public List<Bodovanje> findByTenderPrvorangirani(Integer broj_tendera) {
-        return bodovanjeRepository.findByTenderPrvorangirani(broj_tendera);
-    }
-
 }
