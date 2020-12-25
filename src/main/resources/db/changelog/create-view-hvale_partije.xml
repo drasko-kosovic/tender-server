@@ -9,19 +9,17 @@
                      schemaName="public"
                      viewName="hvale_partije">
                      SELECT procijenjena.id,
-                     procijenjena.partija,
-                     <!-- procijenjena.atc, -->
-                     procijenjena.naziv_proizvoda,
-                     procijenjena.farmaceutski_oblik,
-                     procijenjena.pakovanje,
-                     procijenjena.trazena_kolicina,
-                     procijenjena.procijenjena_jedinicna_cijena,
-                     procijenjena.procijenjena_ukupna_cijena,
-                     procijenjena.broj_tendera
-                    FROM procijenjena
-                   WHERE NOT (procijenjena.partija IN ( SELECT view_bodovanje.partija
-                            FROM view_bodovanje
-                           WHERE view_bodovanje.bod_ukupno = 100::numeric))
+    procijenjena.partija,
+    procijenjena.naziv_proizvoda,
+    procijenjena.farmaceutski_oblik,
+    procijenjena.pakovanje,
+    procijenjena.trazena_kolicina,
+    procijenjena.procijenjena_jedinicna_cijena,
+    procijenjena.procijenjena_ukupna_cijena,
+    procijenjena.broj_tendera
+   FROM procijenjena
+  WHERE (NOT (procijenjena.partija IN ( SELECT view_prvorangirani.partija
+           FROM view_prvorangirani)));
         </createView>
 
     </changeSet>

@@ -5,9 +5,12 @@
     <include file="db/changelog/create-table-ponude.xml" />
     <include file="db/changelog/create-view-bodovanje1.xml" />
     <include file="db/changelog/create-view-bodovanje.xml" />
+    <include file="db/changelog/create-view-maximalni_bod.xml" />
+    <include file="db/changelog/create-view-prvorangirani.xml" />
     <include file="db/changelog/create-table-procijenjena.xml" />
     <include file="db/changelog/create-table-users.xml" />
     <include file="db/changelog/insert-role.xml" />
     <include file="db/changelog/create-view-hvale_partije.xml" />
+
 
 </databaseChangeLog>

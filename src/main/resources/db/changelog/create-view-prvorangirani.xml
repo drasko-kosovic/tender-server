@@ -1,0 +1,31 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd">
+  <changeSet author="liquibase-docs" id="create-view-prvorangirani">
+    <createView catalogName="ponude" schemaName="public" viewName="view_prvorangirani">
+      SELECT
+      view_bodovanje.id, 
+      view_bodovanje.partija, 
+      view_bodovanje.atc, 
+      view_bodovanje.naziv_proizvoda, 
+      view_bodovanje.zasticeni_naziv, 
+      view_bodovanje.proizvodjac, 
+      view_bodovanje.farmaceutski_oblik, 
+      view_bodovanje.pakovanje, 
+      view_bodovanje.trazena_kolicina, 
+      view_bodovanje.ponudjana_kolicina, 
+      view_bodovanje.procijenjena_jedinicna_cijena, 
+      view_bodovanje.ponudjena_jedinicna_cijena, 
+      view_bodovanje.procijenjena_ukupna_cijena, 
+      view_bodovanje.ponudjena_ukupna_cijena, 
+      view_bodovanje.rok_isporuke, 
+      view_bodovanje.ponudjac, 
+      view_bodovanje.broj_tendera
+    FROM
+      maximalni_bod
+      INNER JOIN
+      view_bodovanje
+      ON 
+        maximalni_bod.partija = view_bodovanje.partija
+        </createView>
+  </changeSet>
+</databaseChangeLog>
