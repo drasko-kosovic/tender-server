@@ -1,34 +1,51 @@
 <?xml version="1.1" encoding="UTF-8" standalone="no"?>
 <databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd">
-    <changeSet  author="liquibase-docs"  id="createView-example">
+    <changeSet  author="liquibase-docs"  id="create-view_bodovanje">
         <createView  catalogName="ponude"
 
                      schemaName="public"
                      viewName="view_bodovanje">
-                     SELECT 
-                     bodovanje1.id, 
-                     bodovanje1.partija, 
-                     bodovanje1.atc, 
-                     bodovanje1.naziv_proizvoda, 
-                     bodovanje1.zasticeni_naziv, 
-                     bodovanje1.proizvodjac, 
-                     bodovanje1.farmaceutski_oblik, 
-                     bodovanje1.pakovanje, 
-                     bodovanje1.trazena_kolicina, 
-                     bodovanje1.ponudjana_kolicina, 
-                     bodovanje1.procijenjena_jedinicna_cijena, 
-                     bodovanje1.ponudjena_jedinicna_cijena, 
-                     bodovanje1.procijenjena_ukupna_cijena, 
-                     bodovanje1.ponudjena_ukupna_cijena, 
-                     bodovanje1.rok_isporuke, 
-                     bodovanje1.ponudjac, 
-                     bodovanje1.broj_tendera, 
-                     bodovanje1.bod_cijena, 
-                     bodovanje1.bod_rok, 
-                     (
-                       bodovanje1.bod_cijena + (bodovanje1.bod_rok)::numeric
-                     ) AS bod_ukupno 
-                   FROM bodovanje1;
+                     SELECT bod.id,
+    bod.partija,
+    bod.atc,
+    bod.naziv_proizvoda,
+    bod.zasticeni_naziv,
+    bod.proizvodjac,
+    bod.farmaceutski_oblik,
+    bod.pakovanje,
+    bod.trazena_kolicina,
+    bod.ponudjana_kolicina,
+    bod.procijenjena_jedinicna_cijena,
+    bod.ponudjena_jedinicna_cijena,
+    bod.procijenjena_ukupna_cijena,
+    bod.ponudjena_ukupna_cijena,
+    bod.rok_isporuke,
+    bod.ponudjac,
+    bod.broj_tendera,
+    bod.bod_cijena,
+    bod.bod_rok,
+    bod.bod_ukupno
+   FROM ( SELECT ponude.id,
+            ponude.partija,
+            ponude.atc,
+            ponude.naziv_proizvoda,
+            ponude.zasticeni_naziv,
+            ponude.proizvodjac,
+            ponude.farmaceutski_oblik,
+            ponude.pakovanje,
+            ponude.trazena_kolicina,
+            ponude.ponudjana_kolicina,
+            ponude.procijenjena_jedinicna_cijena,
+            ponude.ponudjena_jedinicna_cijena,
+            ponude.procijenjena_ukupna_cijena,
+            ponude.ponudjena_ukupna_cijena,
+            ponude.rok_isporuke,
+            ponude.ponudjac,
+            ponude.broj_tendera,
+            (((90)::numeric * min(ponude.ponudjena_jedinicna_cijena) OVER (PARTITION BY ponude.partija, ponude.broj_tendera)) / ponude.ponudjena_jedinicna_cijena) AS bod_cijena,
+            ((10 * min(ponude.rok_isporuke) OVER (PARTITION BY ponude.partija, ponude.broj_tendera)) / ponude.rok_isporuke) AS bod_rok,
+            ((((90)::numeric * min(ponude.ponudjena_jedinicna_cijena) OVER (PARTITION BY ponude.partija, ponude.broj_tendera)) / ponude.ponudjena_jedinicna_cijena) + (((10 * min(ponude.rok_isporuke) OVER (PARTITION BY ponude.partija, ponude.broj_tendera)) / ponude.rok_isporuke))::numeric) AS bod_ukupno
+           FROM ponude) bod
         </createView>
     </changeSet>
 </databaseChangeLog>
