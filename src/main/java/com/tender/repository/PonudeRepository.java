@@ -13,16 +13,16 @@ import java.util.List;
 public interface PonudeRepository extends JpaRepository<Ponude, Integer> {
 
 
-        @Query(value = " SELECT * FROM Ponude p WHERE p.broj_tendera=:broj_tendera", nativeQuery = true)
+        @Query(value = " SELECT * FROM Ponude p WHERE p.broj_tendera=:broj_tendera ORDER BY partija ASC", nativeQuery = true)
         List<Ponude> findByBroj_tendera(Integer broj_tendera);
 
-        @Query(value = " SELECT * FROM Ponude p WHERE p.broj_tendera=:broj_tendera and p.ponudjac=:ponudjac", nativeQuery = true)
+        @Query(value = " SELECT * FROM Ponude p WHERE p.broj_tendera=:broj_tendera and p.ponudjac=:ponudjac ORDER BY partija ASC", nativeQuery = true)
         List<Ponude> findByBrojTenderaPonudjac(Integer broj_tendera, String ponudjac);
 
         @Query(value = " SELECT * FROM ponude", nativeQuery = true)
         List<Ponude> All();
 
-        @Query(value = " SELECT * FROM Ponude p WHERE p.ponudjena_ukupna_cijena  > p.procijenjena_ukupna_cijena and p.broj_tendera=:broj_tendera", nativeQuery = true)
+        @Query(value = " SELECT * FROM Ponude p WHERE p.ponudjena_ukupna_cijena  > p.procijenjena_ukupna_cijena and p.broj_tendera=:broj_tendera ORDER BY partija ASC", nativeQuery = true)
         List<Ponude> PrekoProcijenjeneByBrojTendera(Integer broj_tendera);
 
         @Modifying

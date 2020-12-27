@@ -12,7 +12,7 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface HvaleRepository extends JpaRepository<Hvale, Integer> {
 
-    @Query(value = "SELECT * FROM hvale_partije u WHERE u.broj_tendera = :broj_tendera", 
+    @Query(value = "SELECT * FROM hvale_partije u WHERE u.broj_tendera = :broj_tendera ORDER BY partija ASC", 
     nativeQuery = true)
   List<Hvale>findBrojTenderaHvli(@Param("broj_tendera") Integer broj_tendera);
 
