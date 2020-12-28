@@ -26,6 +26,6 @@ public class Prvorangirani {
     Double ponudjena_ukupna_cijena;
     Integer rok_isporuke;
     String ponudjac;
-    String broj_tendera;
+    Integer broj_tendera;
 
 }
