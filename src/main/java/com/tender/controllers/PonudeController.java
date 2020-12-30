@@ -73,7 +73,7 @@ public class PonudeController {
     public ResponseEntity<Ponude> add(@Valid @RequestBody Ponude ponude) {
         ponudeService.add(ponude);
 
-        return new ResponseEntity<Void>(HttpStatus.CREATED);
+        return new ResponseEntity<>(HttpStatus.CREATED);
     }
 
     @DeleteMapping("/ponude/delete/selected")
