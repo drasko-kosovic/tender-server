@@ -45,7 +45,7 @@
             (((90)::numeric * min(ponude.ponudjena_jedinicna_cijena) OVER (PARTITION BY ponude.partija, ponude.broj_tendera)) / ponude.ponudjena_jedinicna_cijena) AS bod_cijena,
             ((10 * min(ponude.rok_isporuke) OVER (PARTITION BY ponude.partija, ponude.broj_tendera)) / ponude.rok_isporuke) AS bod_rok,
             ((((90)::numeric * min(ponude.ponudjena_jedinicna_cijena) OVER (PARTITION BY ponude.partija, ponude.broj_tendera)) / ponude.ponudjena_jedinicna_cijena) + (((10 * min(ponude.rok_isporuke) OVER (PARTITION BY ponude.partija, ponude.broj_tendera)) / ponude.rok_isporuke))::numeric) AS bod_ukupno
-           FROM ponude) bod
+           FROM ponude where ponude.procijenjena_jedinicna_cijena >= ponude.ponudjena_jedinicna_cijena) bod
         </createView>
     </changeSet>
 </databaseChangeLog>

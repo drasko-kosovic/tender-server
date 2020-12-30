@@ -41,8 +41,8 @@ public class PonudeServiceImpl implements PonudeService {
     // }
 
     @Override
-    public List<Ponude> PrekoProcijenjeneByBrojTendera(Integer brojTendera) {
-        return ponudeRepository.PrekoProcijenjeneByBrojTendera(brojTendera);
+    public List<Ponude> PrekoProcijenjeneByBrojTendera(Integer broj_tendera) {
+        return ponudeRepository.PrekoProcijenjeneByBrojTendera(broj_tendera);
     }
 
     @Override

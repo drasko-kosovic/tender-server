@@ -47,15 +47,15 @@ public class PonudeController {
         return ponude;
     }
 
-    @GetMapping("/ponude/tender/preko_procijenjene/{brojTendera}")
-    public List<Ponude> findPrekoProcijenjeneByBrojTendera(@PathVariable Integer brojTendera) {
-        List<Ponude> preko_procijenjene = ponudeService.PrekoProcijenjeneByBrojTendera(brojTendera);
+    @GetMapping("/ponude/tender/preko_procijenjene/{broj_tendera}")
+    public List<Ponude> findPrekoProcijenjeneByBrojTendera(@PathVariable Integer broj_tendera) {
+        List<Ponude> preko_procijenjene = ponudeService.PrekoProcijenjeneByBrojTendera(broj_tendera);
         return preko_procijenjene;
 
     }
 
     @PutMapping("/ponude/update")
-    public ResponseEntity<?> update(@RequestBody Ponude ponude) {
+    public ResponseEntity<Ponude> update(@RequestBody Ponude ponude) {
         Optional<Ponude> optPonude = ponudeService.update(ponude);
 
         if (optPonude.isPresent()) {
