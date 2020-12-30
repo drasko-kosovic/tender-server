@@ -23,7 +23,7 @@ public class PonudeController {
     private PonudeService ponudeService;
 
     @GetMapping("/ponude/all")
-    public ResponseEntity<?> findAll(Pageable pageable) {
+    public ResponseEntity<Page<Ponude>> findAll(Pageable pageable) {
         return new ResponseEntity<Page<Ponude>>(ponudeService.findAll(pageable), HttpStatus.OK);
     }
 
