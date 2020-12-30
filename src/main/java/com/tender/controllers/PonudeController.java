@@ -62,16 +62,15 @@ public class PonudeController {
             return new ResponseEntity<Ponude>(optPonude.get(), HttpStatus.NO_CONTENT);
         }
 
-        return new ResponseEntity<Void>(HttpStatus.NOT_FOUND);
+        return new ResponseEntity<>(HttpStatus.NOT_FOUND);
     }
-
     @DeleteMapping("/ponude/delete/{id}")
     public void delete(@PathVariable Integer id) {
         ponudeService.delete(id);
     }
 
     @PostMapping("/ponude/add")
-    public ResponseEntity<?> add(@Valid @RequestBody Ponude ponude) {
+    public ResponseEntity<Ponude> add(@Valid @RequestBody Ponude ponude) {
         ponudeService.add(ponude);
 
         return new ResponseEntity<Void>(HttpStatus.CREATED);
