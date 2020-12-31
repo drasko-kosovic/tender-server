@@ -29,17 +29,6 @@ public class PonudeServiceImpl implements PonudeService {
         return ponudeRepository.All();
     }
 
-    // @Override
-    // public List<Ponude> findByBrojTendera(String broj_tendera) {
-    // return ponudeRepository.findByBroj_tendera(broj_tendera);
-    // }
-
-    // @Override
-    // public List<Ponude> findBrojTenderaPonudac(String broj_tendera, String
-    // ponudjac) {
-    // return ponudeRepository.findByBrojTenderaPonudjac(broj_tendera, ponudjac);
-    // }
-
     @Override
     public List<Ponude> PrekoProcijenjeneByBrojTendera(Integer broj_tendera) {
         return ponudeRepository.PrekoProcijenjeneByBrojTendera(broj_tendera);
@@ -151,15 +140,21 @@ public class PonudeServiceImpl implements PonudeService {
 
     @Override
     public void updatePonudeSelected(int id) {
-        {
-            ponudeRepository.updateSlected(id);
-        }
+
+        ponudeRepository.updateSlected(id);
+
     }
 
     @Override
     public List<Ponude> findByBrojTendera(Integer broj_tendera) {
 
         return ponudeRepository.findByBroj_tendera(broj_tendera);
+    }
+
+    @Override
+    public void updateUgovor(String ugovor_broj, Integer tender_broj, String ponudjaci) {
+        ponudeRepository.updateUgovor(ugovor_broj, tender_broj, ponudjaci);
+
     }
 
 }

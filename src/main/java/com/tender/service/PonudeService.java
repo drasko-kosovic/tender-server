@@ -29,4 +29,6 @@ public interface PonudeService {
 
 	public void updatePonudeSelected(int id);
 
+	void updateUgovor(String ugovor_broj, Integer tender_broj, String ponudjaci);
+
 }
