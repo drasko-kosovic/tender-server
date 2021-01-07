@@ -152,15 +152,9 @@ public class PonudeServiceImpl implements PonudeService {
     }
 
     @Override
-    public void updateUgovor(String ugovor_broj, Integer tender_broj, String ponudjaci) {
-        ponudeRepository.updateUgovor(ugovor_broj, tender_broj, ponudjaci);
+    public void addUgovor(Integer broj_tendera, String ponudjac) {
 
-    }
-
-    @Override
-    public void addUgovor(String broj_ugovora, Integer broj_tendera, String ponudjac) {
-       
-        this.ponudeRepository.addUgovor(broj_ugovora,broj_tendera,ponudjac);
+        this.ponudeRepository.addUgovor(broj_tendera, ponudjac);
 
     }
 
