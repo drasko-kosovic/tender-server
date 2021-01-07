@@ -34,7 +34,7 @@ public interface PonudeRepository extends JpaRepository<Ponude, Integer> {
         void updateSlected(@Param("Id") int Id);
 
         @Modifying
-        @Query("UPDATE Ponude p SET p.broj_ugovora='243' WHERE p.broj_tendera=:broj_tendera AND p.ponudjac=:ponudjac")
-        public void addUgovor(Integer broj_tendera, String ponudjac);
+        @Query("UPDATE Ponude p SET p.broj_ugovora=:broj_ugovora WHERE p.broj_tendera=:broj_tendera AND p.ponudjac=:ponudjac")
+        public void addUgovor(String broj_ugovora, Integer broj_tendera, String ponudjac);
 
 }

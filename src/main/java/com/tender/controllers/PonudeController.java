@@ -89,8 +89,8 @@ public class PonudeController {
     }
 
     @PutMapping("/ponude/update/ugovor")
-    void addUgovor(@RequestParam Integer broj_tendera, String ponudjac) {
-        this.ponudeService.addUgovor(broj_tendera, ponudjac);
+    void addUgovor(@RequestParam String broj_ugovora, Integer broj_tendera, String ponudjac) {
+        this.ponudeService.addUgovor(broj_ugovora, broj_tendera, ponudjac);
     }
 
 }
