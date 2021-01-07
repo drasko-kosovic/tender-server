@@ -64,6 +64,7 @@ public class PonudeController {
 
         return new ResponseEntity<>(HttpStatus.NOT_FOUND);
     }
+
     @DeleteMapping("/ponude/delete/{id}")
     public void delete(@PathVariable Integer id) {
         ponudeService.delete(id);
@@ -85,13 +86,18 @@ public class PonudeController {
     @PutMapping("/ponude/update/selected/{id}")
     public void updatePonude(@PathVariable("id") int id) {
         ponudeService.updatePonudeSelected(id);
-}
-
+    }
 
     @PutMapping("/ponude/update/ugovor/{ugovor_broj}/{tender_broj}/{ponudjaci}")
-    public void updateUgovor(@PathVariable("ugovor_broj") String ugovor_broj, @PathVariable("tender_broj") int tender_broj,@PathVariable("ponudjaci")String ponudjaci)  {
-        ponudeService.updateUgovor(ugovor_broj,tender_broj,ponudjaci);
+    public void updateUgovor(@PathVariable("ugovor_broj") String ugovor_broj,
+            @PathVariable("tender_broj") int tender_broj, @PathVariable("ponudjaci") String ponudjaci) {
+        ponudeService.updateUgovor(ugovor_broj, tender_broj, ponudjaci);
 
+    }
+
+    @PutMapping("/ponude/update/ugovor")
+    void addUgovor(@RequestParam String broj_ugovora, Integer broj_tendera, String ponudjac) {
+        this.addUgovor(broj_ugovora, broj_tendera, ponudjac);
     }
 
 }

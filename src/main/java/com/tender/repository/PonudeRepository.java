@@ -7,11 +7,11 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
+import java.util.Date;
 import java.util.List;
 
 @Repository
 public interface PonudeRepository extends JpaRepository<Ponude, Integer> {
-
 
         @Query(value = " SELECT * FROM Ponude p WHERE p.broj_tendera=:broj_tendera ORDER BY partija ASC", nativeQuery = true)
         List<Ponude> findByBroj_tendera(Integer broj_tendera);
@@ -33,10 +33,12 @@ public interface PonudeRepository extends JpaRepository<Ponude, Integer> {
         @Query("UPDATE Ponude p SET p.selected=true WHERE p.id = :Id")
         void updateSlected(@Param("Id") int Id);
 
-
-
         @Modifying
         @Query("UPDATE Ponude p SET p.broj_ugovora =:ugovor_broj WHERE p.broj_tendera = :tender_broj AND p.ponudjac=:ponudjaci")
-        void updateUgovor(String ugovor_broj,Integer tender_broj,String ponudjaci);
+        void updateUgovor(String ugovor_broj, Integer tender_broj, String ponudjaci);
+
+        @Modifying
+        @Query("UPDATE Ponude p SET p.broj_ugovora=:broj_ugovora WHERE p.broj_tendera=:broj_tendera AND p.ponudjac=:ponudjac")
+        public void addUgovor(String broj_ugovora,Integer broj_tendera,String ponudjac);
 
 }

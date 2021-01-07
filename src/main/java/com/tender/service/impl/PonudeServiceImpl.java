@@ -157,4 +157,11 @@ public class PonudeServiceImpl implements PonudeService {
 
     }
 
+    @Override
+    public void addUgovor(String broj_ugovora, Integer broj_tendera, String ponudjac) {
+       
+        this.ponudeRepository.addUgovor(broj_ugovora,broj_tendera,ponudjac);
+
+    }
+
 }

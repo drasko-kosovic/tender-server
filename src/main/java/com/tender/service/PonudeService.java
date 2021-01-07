@@ -31,4 +31,7 @@ public interface PonudeService {
 
 	void updateUgovor(String ugovor_broj, Integer tender_broj, String ponudjaci);
 
+	public void addUgovor(String broj_ugovora,Integer broj_tendera,String ponudjac);
+
+
 }
