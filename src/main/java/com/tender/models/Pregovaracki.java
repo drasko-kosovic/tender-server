@@ -19,7 +19,7 @@ public class Pregovaracki {
     Double procijenjena_ukupna_cijena;
     Double ponudjena_ukupna_cijena;
     String ponudjac;
-    Integer broj_jednostavne;
+    String broj_jednostavne;
     String broj_ugovora_odluka;
     Date datum_ugovora_odluke;
     @Id
