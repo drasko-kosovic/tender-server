@@ -7,7 +7,7 @@ import java.util.Date;
 
 @Data
 @Entity
-@Table(name = "pregovaraci")
+@Table(name = "pregovaracki")
 public class Pregovaracki {
 
     String atc;
@@ -25,13 +25,8 @@ public class Pregovaracki {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    private Boolean selected;
 
     public Pregovaracki() {
     }
-
-
-    
-
 
 }

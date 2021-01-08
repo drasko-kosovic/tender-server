@@ -26,7 +26,7 @@ public class Jednostavne {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    private Boolean selected;
+   
 
     public Jednostavne() {
     }

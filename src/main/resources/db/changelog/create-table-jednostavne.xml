@@ -44,7 +44,7 @@
             <column name="broj_jednostavne" type="VARCHAR(255)">
                 
             </column>
-            <column name="broj_ugovora_odluka;" type="VARCHAR(255)">
+            <column name="broj_ugovora_odluka" type="VARCHAR(255)">
              
             </column>
             <column name="datum_ugovora_odluke" type="date">
