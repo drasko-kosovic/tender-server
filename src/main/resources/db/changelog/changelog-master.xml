@@ -10,6 +10,8 @@
     <include file="db/changelog/create-table-users.xml" />
     <include file="db/changelog/insert-role.xml" />
     <include file="db/changelog/create-view-hvale_partije.xml" />
+    <include file="db/changelog/create-table-jednostavne.xml" />
+    <include file="db/changelog/create-table-pregovaracki.xml" />
 
 
 </databaseChangeLog>

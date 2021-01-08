@@ -1,0 +1,58 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd">
+    <changeSet author="Drasko" id="table-jednostavne">
+        <createTable tableName="jednostavne">
+            <column autoIncrement="true" name="id" type="BIGSERIAL">
+                <constraints primaryKey="true" primaryKeyName="jednostavne_pkey"/>
+            </column>
+          
+            <column name="atc" type="VARCHAR(255)">
+                
+            </column>
+            <column name="naziv_proizvoda" type="VARCHAR(255)">
+                
+            </column>
+           
+
+            <column name="trazena_kolicina" type="INTEGER">
+               
+            </column>
+            <column name="ponudjana_kolicina" type="INTEGER">
+                
+            </column>
+
+            <column name="procijenjena_jedinicna_cijena" type="DECIMAL(12, 2)">
+                
+            </column>
+
+            <column name="ponudjena_jedinicna_cijena" type="DECIMAL(12, 2)">
+               
+            </column>
+
+
+            <column name="procijenjena_ukupna_cijena" type="DECIMAL(12, 2)">
+                
+            </column>
+            <column name="ponudjena_ukupna_cijena" type="DECIMAL(12, 2)">
+                
+            </column>
+
+           
+            <column name="ponudjac" type="VARCHAR(255)">
+               
+            </column>
+            <column name="broj_jednostavne" type="VARCHAR(255)">
+                
+            </column>
+            <column name="broj_ugovora_odluka;" type="VARCHAR(255)">
+             
+            </column>
+            <column name="datum_ugovora_odluke" type="date">
+               
+            </column>
+            
+        </createTable>
+
+    </changeSet>
+    
+</databaseChangeLog>
