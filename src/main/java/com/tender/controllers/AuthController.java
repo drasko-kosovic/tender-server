@@ -19,7 +19,7 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.*;
-
+import com.tender.service.NotificationService;
 import javax.validation.Valid;
 import java.util.HashSet;
 import java.util.List;
@@ -30,6 +30,10 @@ import java.util.stream.Collectors;
 @RestController
 @RequestMapping("/api/auth")
 public class AuthController {
+
+	@Autowired
+	NotificationService notificationService;
+
 	@Autowired
 	AuthenticationManager authenticationManager;
 
@@ -115,7 +119,8 @@ public class AuthController {
 
 		user.setRoles(roles);
 		userRepository.save(user);
-
+		this.notificationService.sendMailNotification(user);
 		return ResponseEntity.ok(new MessageResponse("Uspjesno ste se registrovali!"));
+		
 	}
 }
