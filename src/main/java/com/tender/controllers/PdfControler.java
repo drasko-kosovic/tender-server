@@ -41,48 +41,48 @@ public class PdfControler {
 
         List<Ponude> ponude = (List<Ponude>) ponudeRepository.findByBroj_tendera(broj_tendera);
 
-        // Data source Set
+
         JRDataSource dataSource = new JRBeanCollectionDataSource(ponude);
         params.put("datasource", dataSource);
 
-        // Make jasperPrint
+
         JasperPrint jasperPrint = JasperFillManager.fillReport(report, params, dataSource);
-        // Media Type
+
         response.setContentType(MediaType.APPLICATION_PDF_VALUE);
-        // Export PDF Stream
+
         JasperExportManager.exportReportToPdfStream(jasperPrint, response.getOutputStream());
     }
 
-    // @GetMapping(path = "/ponude/{broj_tendera}")
-    // @ResponseBody
-    //
-    // public void getPdfPonude(HttpServletResponse response, @PathVariable String
-    // broj_tendera) throws Exception {
-    //
-    // Resource resource =
-    // context.getResource("classpath:reports/ponude/repPonude.jrxml");
-    //
-    // InputStream inputStream = resource.getInputStream();
-    // JasperReport report = JasperCompileManager.compileReport(inputStream);
-    //
-    // Map<String, Object> params = new HashMap<>();
-    //
-    //
-    // List<Ponude> ponude= (List<Ponude>)
-    // ponudeRepository.findByBroj_tendera(broj_tendera);
-    //
-    // //Data source Set
-    // JRDataSource dataSource = new JRBeanCollectionDataSource(ponude);
-    // params.put("datasource", dataSource);
-    //
-    // //Make jasperPrint
-    // JasperPrint jasperPrint = JasperFillManager.fillReport(report, params,
-    // dataSource);
-    // //Media Type
-    // response.setContentType(MediaType.APPLICATION_PDF_VALUE);
-    // //Export PDF Stream
-    // JasperExportManager.exportReportToPdfStream(jasperPrint,
-    // response.getOutputStream());
-    // }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 }

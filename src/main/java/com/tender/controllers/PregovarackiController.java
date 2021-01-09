@@ -21,7 +21,8 @@ public class PregovarackiController {
 
 	@GetMapping("/ponude/pregovaracki")
 	public List<Pregovaracki> findAllPregovaracki() {
-	List<Pregovaracki> pregovaracki = pregovarackiService.findAllPregovaracki();
-	return pregovaracki;
+		List<Pregovaracki> pregovaracki = pregovarackiService.findAllPregovaracki();
+		return pregovaracki;
+
 	}
 }
