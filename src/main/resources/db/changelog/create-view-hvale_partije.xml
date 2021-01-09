@@ -1,6 +1,6 @@
 <?xml version="1.1" encoding="UTF-8" standalone="no"?>
 <databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd">
-    <changeSet author="Win" id="1604254875082-1">
+    <changeSet author="Drasko" id="hvale_partije">
         <createView catalogName="ponude" schemaName="public" viewName="hvale_partije">
                      SELECT procijenjena.id,
     procijenjena.partija,
@@ -14,7 +14,7 @@
    FROM procijenjena
   WHERE (NOT (procijenjena.partija IN ( SELECT view_prvorangirani.partija
            FROM view_prvorangirani)));
-        </createView>
+</createView>
 
     </changeSet>
 </databaseChangeLog>

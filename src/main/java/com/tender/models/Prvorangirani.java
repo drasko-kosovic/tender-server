@@ -27,5 +27,6 @@ public class Prvorangirani {
     Integer rok_isporuke;
     String ponudjac;
     Integer broj_tendera;
+    String broj_ugovora;
 
 }

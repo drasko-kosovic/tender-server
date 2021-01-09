@@ -31,8 +31,9 @@ public class Bodovanje {
     Double bod_cijena;
     Double bod_rok;
     Double bod_ukupno;
+    Double broj_ugovora;
 
-   
 
-   
+
+
 }
