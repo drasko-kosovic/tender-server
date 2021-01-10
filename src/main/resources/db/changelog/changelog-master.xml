@@ -12,6 +12,9 @@
     <include file="db/changelog/create-view-hvale_partije.xml" />
     <include file="db/changelog/create-table-jednostavne.xml" />
     <include file="db/changelog/create-table-pregovaracki.xml" />
+    <include file="db/changelog/create-table-ponude-pregovaracki-pharm.xml" />
+    <include file="db/changelog/create-table-ponude-jednostavne-pharm.xml" />
+
 
 
 </databaseChangeLog>

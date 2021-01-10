@@ -1,0 +1,70 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd">
+    <changeSet author="Drasko" id="create-ponude_pregovaracki_pharm">
+        <createTable tableName="ponude_pregovaracki_pharm">
+
+            <column autoIncrement="true" name="id" type="BIGSERIAL">
+                <constraints primaryKey="true" primaryKeyName="pregovaracki_pharm_pkey" />
+            </column>
+            <column name="partija" type="INTEGER">
+                <constraints nullable="false" />
+            </column>
+            <column name="atc" type="VARCHAR(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="naziv_proizvoda" type="VARCHAR(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="zasticeni_naziv" type="VARCHAR(255)">
+                <constraints nullable="true" />
+            </column>
+
+            <column name="proizvodjac" type="VARCHAR(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="farmaceutski_oblik" type="VARCHAR(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="pakovanje" type="VARCHAR(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="trazena_kolicina" type="INTEGER">
+                <constraints nullable="false" />
+            </column>
+            <column name="ponudjana_kolicina" type="INTEGER">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="procijenjena_jedinicna_cijena" type="DECIMAL(12, 2)">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="ponudjena_jedinicna_cijena" type="DECIMAL(12, 2)">
+                <constraints nullable="false" />
+            </column>
+
+
+            <column name="procijenjena_ukupna_cijena" type="DECIMAL(12, 2)">
+                <constraints nullable="false" />
+            </column>
+            <column name="ponudjena_ukupna_cijena" type="DECIMAL(12, 2)">
+                <constraints nullable="false" />
+            </column>
+
+            <column name="rok_isporuke" type="INTEGER">
+                <constraints nullable="false" />
+            </column>
+            <column name="ponudjac" type="VARCHAR(255)">
+                <constraints nullable="false" />
+            </column>
+            <column name="broj_tendera" type="INTEGER">
+                <constraints nullable="false" />
+            </column>
+            <column name="selected" type="boolean"></column>
+            <column name="broj_ugovora" type="varchar(255)" />
+            <column name="datum_ugovora" type="date" />
+        </createTable>
+
+    </changeSet>
+
+</databaseChangeLog>
