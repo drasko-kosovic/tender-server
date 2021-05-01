@@ -13,7 +13,6 @@ public class Hvale {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     Integer partija;
-   
     String naziv_proizvoda;
     String farmaceutski_oblik;
     String pakovanje;
